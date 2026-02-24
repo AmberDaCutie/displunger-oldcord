@@ -35,7 +35,7 @@ const jsFiles = (
 const cssFile = args.css && !args.css.includes(".css") ? `${args.css}.css` : args.css;
 const apiVersion = args.api ?? 9;
 
-const canonicalUrl = new URL(args.host ?? `http://127.0.0.1:${port}`);
+const canonicalUrl = new URL(args.host ?? `http://0.0.0.0:${port}`);
 const premadeEnv = {
   API_ENDPOINT: `//staging.oldcordapp.com/api`,
   API_VERSION: apiVersion,
