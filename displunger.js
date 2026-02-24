@@ -59,7 +59,7 @@ const premadeEnv = {
   REMOTE_AUTH_ENDPOINT: "//remote-auth-gateway.discord.gg",
   SENTRY_TAGS: {"buildId":"7ea92cf","buildType":"normal"},
   MIGRATION_SOURCE_ORIGIN: "https://canary.discordapp.com",
-  MIGRATION_DESTINATION_ORIGIN: "https://canary.discord.com",
+  MIGRATION_DESTINATION_ORIGIN: "https://staging.oldcordapp.com",
   HTML_TIMESTAMP: Date.now(),
   ALGOLIA_KEY: "aca0d7082e4e63af5ba5917d5e96bed0",
   PUBLIC_PATH: "/assets/"
@@ -201,7 +201,7 @@ app.get("/launch/:build", async (req, res) => {
 
 // proxy api requests
 app.all("/api/*", async (req, res) => {
-  const url = new URL(req.url, "https://canary.discord.com");
+  const url = new URL(req.url, "https://staging.oldcordapp.com");
 
   const headers = Object.fromEntries(
     Object.entries(req.headers)
